@@ -3,7 +3,7 @@ from tkinter import ttk
 from tkinter import Button,Frame
 from tkinter.simpledialog import Dialog
 from tkinter.simpledialog import askinteger,askstring
-import Pmw
+
 
 class Window(tk.Tk):
     def __init__(self,**kwargs) -> None:
@@ -208,19 +208,12 @@ class Window(tk.Tk):
         button81.pack(side=tk.LEFT,fill=tk.BOTH,expand=True)
         nine_frame.pack(expand=True,fill=tk.BOTH)
 
-    def Game_Set(self):
+    '''def Game_Set(self):
         Pmw.initialise()
         dialog = Pmw.Dialog(self, buttons=('開始', 'Apply', '離開', '求助'),defaultbutton='開始', title='配置フェーズ(初始配置)')
         dialog.activate()
-        return 
+        return '''
 
-
-
-        """ Pmw.initialise()
-        dialog = Pmw.Dialog(self, buttons=('開始', 'Apply', '離開', '求助'),defaultbutton='開始', title='配置フェーズ(初始配置)')
-        messageLabel = tk.Label(dialog.interior(), text='遊戲要開始了!',background='black', foreground='white', pady=20)
-        messageLabel.pack(expand=1,fill=tk.X, padx=4, pady=4)
-        dialog.activate() """
         
     def Click_Start(self):
         self.buttonVar.get("+")
