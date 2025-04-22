@@ -1,6 +1,6 @@
 import tkinter as tk
 from tkinter import ttk
-from tkinter import Button,Frame
+from tkinter import Button,Frame,Radiobutton
 from tkinter.simpledialog import Dialog
 from tkinter.simpledialog import askinteger,askstring
 
@@ -19,6 +19,8 @@ class Window(tk.Tk):
         self.command_menu.add_command(label="離開", command=self.destroy)
         self.menubar.add_cascade(label="選項", menu=self.command_menu)
         
+
+
         one_frame = Frame(self,bg="#ffffff")
         button1 = tk.Button(one_frame,text="9-1",font=("Helvetica","24"),command=self.Click_Start,textvariable=self.buttonVar)
         button1.pack(side=tk.LEFT,fill=tk.BOTH,expand=True)
@@ -208,11 +210,25 @@ class Window(tk.Tk):
         button81.pack(side=tk.LEFT,fill=tk.BOTH,expand=True)
         nine_frame.pack(expand=True,fill=tk.BOTH)
 
-    '''def Game_Set(self):
-        Pmw.initialise()
-        dialog = Pmw.Dialog(self, buttons=('開始', 'Apply', '離開', '求助'),defaultbutton='開始', title='配置フェーズ(初始配置)')
-        dialog.activate()
-        return '''
+        
+        
+
+    def Game_Set(self):
+        #建立視窗radioButton
+        root = tk(
+        
+        )
+        root.title=('SET')
+
+        buttons = [('開始',1) ,('Apply',2),('離開',3),('求助',3)]
+
+        var = IntVar()
+        for text , value in buttons:
+            Radiobutton(root, text=text, value=value, variable=var,indicatoron=0).pack(anchor='west', fill=tk.BOTH, ipadx=18)
+        
+        var.set(1)
+        root.mainloop()
+        return 
 
         
     def Click_Start(self):
